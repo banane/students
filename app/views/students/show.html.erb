@@ -1,0 +1,21 @@
+<h1>Schedule: <%=@student.name %></h1>
+<hr>
+<ul>
+<% @schedule.each do |meeting| %>
+<li>Period <%=meeting["period"]%>: <%=meeting["name"] %> (<%= meeting["duration"]%> minutes)
+    <% if meeting["tags"].size > 0 %>
+        (<%=meeting["tags"].join(",") %>)
+    <% end %>
+</li>
+<% end %>
+</ul>
+
+<h1>Metrics</h1>
+<ul>
+  <% @metrics.each do |k,v| %>
+      <li><%=k %>: <%=v %></li>
+  <% end %>
+</ul>
+
+<hr>
+<%= link_to "back", students_path %>
