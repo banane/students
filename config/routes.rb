@@ -1,4 +1,3 @@
 Students::Application.routes.draw do
-  resources :students do
-  end
+  resources :students
 end

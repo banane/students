@@ -2,11 +2,10 @@ require 'spec_helper'
 
 describe StudentsController, :type => :controller do
 
-  uri = URI('http://localhost:4567/do_stuff')
+
   it "should display students" do
     get :index
     expect(response).to be_ok
-    require 'net/http'
     expect(assigns(:students)).to include('Orion')
   end
 
